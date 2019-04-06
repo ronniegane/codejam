@@ -13,3 +13,5 @@ Compile with `go build` and then pipe the input file to the binary.
 # Tips
 Don't forget to output `Case #X: ` at the start of your answers.
 Note that this numbering starts at 1, *not* 0.
+
+The version of Go used in CodeJam is `1.7.4` which is several versions behind. It does not include strings.Builder (introduced in 1.10)
