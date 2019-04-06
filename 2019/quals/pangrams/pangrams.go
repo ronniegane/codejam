@@ -22,8 +22,6 @@ func main() {
 			fmt.Scanf("%d", &products[j])
 		}
 
-		fmt.Printf("products: %v\n", products)
-
 		// Output cleartext
 		clear = decode(products)
 		fmt.Printf("Case #%d: %s\n", i, clear)
@@ -44,7 +42,6 @@ func decode(cipher []int) string {
 		primes[i] = cipher[i-1] / primes[i-1]
 	}
 
-	fmt.Printf("%v\n", primes)
 	// Find uniques and sort
 	translator := map[int]string{}
 	var uniques []int
@@ -57,15 +54,11 @@ func decode(cipher []int) string {
 		}
 	}
 
-	fmt.Printf("unique primes: %v\n", uniques)
-
 	// Build up a map of prime to alpha
 	sort.Ints(uniques)
 	for a, n := range uniques {
 		translator[n] = fmt.Sprintf("%c", 65+a)
 	}
-
-	fmt.Printf("Dictionary: %v\n", translator)
 
 	// Translate the list of primes
 	var clear string
