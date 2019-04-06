@@ -3,16 +3,13 @@ package main
 import (
 	"fmt"
 	"sort"
-	"strconv"
-	"strings"
 )
 
 func main() {
-	var t, n, l, val int
+	var t, n, l int
 	// scan in number of cases
 	fmt.Scanf("%d\n", &t)
-	var cipher, clear string
-	var prodstrings []string
+	var clear string
 	var products []int
 
 	for i := 1; i <= t; i++ {
@@ -21,13 +18,8 @@ func main() {
 
 		// Read in ciphertext and break into list of products
 		products = make([]int, l)
-		fmt.Scanf("%s\n", &cipher)
-		fmt.Printf("cipher string: %s\n", cipher)
-		prodstrings = strings.Split(cipher, " ")
-		fmt.Printf("prodstrings: %v\n", prodstrings)
-		for j, v := range prodstrings {
-			val, _ = strconv.Atoi(v)
-			products[j] = val
+		for j := 0; j < l; j++ {
+			fmt.Scanf("%d", &products[j])
 		}
 
 		fmt.Printf("products: %v\n", products)
