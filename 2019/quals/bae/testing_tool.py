@@ -159,7 +159,13 @@ class Case:
 def getTestCases(test_number):
   F = (10, 5)[test_number]
   # You can edit or add your own test cases here.
-  cases = [Case([1, 2, 3], 4, F), Case([2, 3, 5], 6, F), Case([1000], 1024, F)]
+  cases = [
+    Case([1, 2, 3], 4, F), 
+  Case([2, 3, 5], 6, F), 
+  # Case([1000], 1024, F),
+  Case([0, 2, 3], 4, F),
+  Case([0, 1, 3, 5], 8, F)
+  ]
   return cases
 
 
@@ -209,4 +215,3 @@ def main():
 
 if __name__ == "__main__":
   main()
-
